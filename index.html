@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sistem Informasi RW</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      display:flex;
+      background:#f4f6fb;
+      color:#222;
+    }
+
+    .sidebar{
+      width:250px;
+      height:100vh;
+      background:#071426;
+      color:white;
+      padding:20px;
+      position:fixed;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:30px;
+    }
+
+    .logo-box{
+      width:50px;
+      height:50px;
+      background:#27c7ff;
+      border-radius:12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:bold;
+      color:#000;
+    }
+
+    .menu-title{
+      font-size:13px;
+      color:#999;
+      margin:20px 0 10px;
+    }
+
+    .menu a{
+      display:block;
+      padding:14px;
+      text-decoration:none;
+      color:white;
+      border-radius:12px;
+      margin-bottom:10px;
+      transition:0.3s;
+    }
+
+    .menu a:hover{
+      background:#15345a;
+    }
+
+    .content{
+      margin-left:270px;
+      padding:30px;
+      width:100%;
+    }
+
+    .hero{
+      background:linear-gradient(to right,#1556d1,#02122e);
+      color:white;
+      padding:30px;
+      border-radius:20px;
+      margin-bottom:25px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:20px;
+      margin-bottom:25px;
+    }
+
+    .card{
+      background:white;
+      padding:25px;
+      border-radius:18px;
+      box-shadow:0 3px 10px rgba(0,0,0,0.08);
+    }
+
+    .card h2{
+      font-size:28px;
+      margin-bottom:8px;
+      color:#1556d1;
+    }
+
+    .section{
+      background:white;
+      padding:25px;
+      border-radius:18px;
+      margin-bottom:25px;
+      box-shadow:0 3px 10px rgba(0,0,0,0.08);
+    }
+
+    .section h2{
+      margin-bottom:20px;
+    }
+
+    form{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+    }
+
+    input, select, textarea{
+      width:100%;
+      padding:12px;
+      border:1px solid #ddd;
+      border-radius:10px;
+      margin-top:8px;
+    }
+
+    button{
+      background:#1683ff;
+      color:white;
+      border:none;
+      padding:12px;
+      border-radius:10px;
+      cursor:pointer;
+      font-weight:bold;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:20px;
+    }
+
+    table th{
+      background:#071426;
+      color:white;
+      padding:12px;
+    }
+
+    table td{
+      padding:12px;
+      border-bottom:1px solid #ddd;
+    }
+
+    @media(max-width:768px){
+      .sidebar{
+        width:100%;
+        height:auto;
+        position:relative;
+      }
+
+      .content{
+        margin-left:0;
+      }
+
+      body{
+        flex-direction:column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <div class="logo">
+      <div class="logo-box">RW</div>
+      <div>
+        <h2>RW 08</h2>
+        <small>Bima Asri</small>
+      </div>
+    </div>
+
+    <div class="menu-title">MENU UTAMA</div>
+
+    <div class="menu">
+      <a href="#dashboard">Dashboard</a>
+      <a href="#warga">Data Warga</a>
+      <a href="#pengumuman">Pengumuman</a>
+      <a href="#sampah">Jadwal Sampah</a>
+      <a href="#posyandu">Posyandu</a>
+      <a href="#kas">Kas RW</a>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <section id="dashboard">
+      <div class="hero">
+        <h1>Dashboard RW 08 Bima Asri</h1>
+        <p>Website Sistem Informasi RW berbasis HTML</p>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <h2>3</h2>
+          <p>Total Warga</p>
+        </div>
+
+        <div class="card">
+          <h2>2</h2>
+          <p>Pengumuman Aktif</p>
+        </div>
+
+        <div class="card">
+          <h2>2</h2>
+          <p>Jadwal Sampah</p>
+        </div>
+
+        <div class="card">
+          <h2>Rp 350K</h2>
+          <p>Kas RW</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="warga">
+      <h2>Data Warga</h2>
+
+      <form>
+        <div>
+          <label>Nama Lengkap</label>
+          <input type="text" placeholder="Masukkan nama">
+        </div>
+
+        <div>
+          <label>NIK</label>
+          <input type="text" placeholder="Masukkan NIK">
+        </div>
+
+        <div>
+          <label>RT</label>
+          <input type="text" placeholder="RT">
+        </div>
+
+        <div>
+          <label>Alamat</label>
+          <input type="text" placeholder="Alamat">
+        </div>
+
+        <div>
+          <label>Status</label>
+          <select>
+            <option>Warga</option>
+            <option>Pendatang</option>
+          </select>
+        </div>
+
+        <div>
+          <label>&nbsp;</label>
+          <button>Tambah Data</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="section" id="pengumuman">
+      <h2>Pengumuman</h2>
+
+      <form>
+        <div>
+          <label>Judul</label>
+          <input type="text">
+        </div>
+
+        <div>
+          <label>Tanggal</label>
+          <input type="date">
+        </div>
+
+        <div>
+          <label>Isi Pengumuman</label>
+          <textarea rows="4"></textarea>
+        </div>
+
+        <div>
+          <label>&nbsp;</label>
+          <button>Tambah Pengumuman</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="section" id="sampah">
+      <h2>Jadwal Sampah</h2>
+
+      <table>
+        <tr>
+          <th>Hari</th>
+          <th>Jenis</th>
+          <th>Jam</th>
+        </tr>
+
+        <tr>
+          <td>Senin</td>
+          <td>Organik</td>
+          <td>07:00</td>
+        </tr>
+
+        <tr>
+          <td>Kamis</td>
+          <td>Anorganik</td>
+          <td>08:00</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="section" id="posyandu">
+      <h2>Posyandu</h2>
+
+      <form>
+        <div>
+          <label>Nama Kegiatan</label>
+          <input type="text">
+        </div>
+
+        <div>
+          <label>Tanggal</label>
+          <input type="date">
+        </div>
+
+        <div>
+          <label>Petugas</label>
+          <input type="text">
+        </div>
+
+        <div>
+          <label>&nbsp;</label>
+          <button>Tambah Kegiatan</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="section" id="kas">
+      <h2>Kas RW</h2>
+
+      <table>
+        <tr>
+          <th>Keterangan</th>
+          <th>Nominal</th>
+        </tr>
+
+        <tr>
+          <td>Pemasukan</td>
+          <td>Rp 500.000</td>
+        </tr>
+
+        <tr>
+          <td>Pengeluaran</td>
+          <td>Rp 150.000</td>
+        </tr>
+
+        <tr>
+          <td><b>Saldo</b></td>
+          <td><b>Rp 350.000</b></td>
+        </tr>
+      </table>
+    </section>
+
+  </div>
+
+</body>
+</html>
